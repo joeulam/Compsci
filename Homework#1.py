@@ -9,6 +9,7 @@ fries = True
 amounts = 0 
 sandwichAmount = True
 order = []
+sandwich2 = True
 
 sandwich_select = input("Do you want a sandwich? ")
 if sandwich_select == "yes":
@@ -33,7 +34,7 @@ if part == 1:
     elif sandwich == "vegan patty" :
         order.append("vegan patty")
         total += 5.75
-        part: 2 
+        part = 2 
     else:
         print("Please enter a valid sandwich type.")
         selected_sandwich = False
@@ -42,16 +43,35 @@ if selected_sandwich == True:
   print("You ordered a " + sandwich + " sandwich." + "Your total comes to $" +str(total) + ".") 
 
 if selected_sandwich == True:
-
-elif sandwichAmount = input("Would you like another sandwich?")
-    if sandwichAmount == "yes"
-    part = 1
-    elif sandwichAmount == "no"
-    part = 2
+    sandwichAmount = input("Would you like another sandwich? ")
+    if sandwichAmount == "yes":
+        part = 0
+    elif sandwichAmount == "no":
+        part = 2
     else:
         print("Please enter a vaild response")
 else:
     part = 2
+if part == 0: 
+    sandwich2 = input("What type of sandwich would you like? Chicken, Beef, or Vegan patty ").lower()
+    if sandwich2 == "chicken" :
+        order.append("chicken")
+        total += 5.25
+    elif sandwich2 == "beef" :
+        order.append("beef")
+        total+= 6.25
+    elif sandwich2 == "vegan patty" :
+        order.append("vegan patty")
+        total += 5.75
+    else:
+        print("Please enter a valid sandwich type.")
+        selected_sandwich = False
+        part = 1
+    print("You ordered a " + sandwich2 + " sandwich and a " + sandwich + " sandwich")
+    print("Your total cost is now $" + str(total))
+    part = 2
+else:
+    print("error")
 
 
 
