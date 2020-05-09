@@ -15,6 +15,7 @@ friesamount = True
 fries2 = True
 drinkamount = True
 drink_size2 = True
+drink_size = True
 
 sandwich_select = input("Do you want a sandwich? ")
 if sandwich_select == "yes":
@@ -94,13 +95,13 @@ else:
 
 
 if part == 2:
-    print("We have small fries for $2, medium for $3, and large fries for $4")
+    print("We have small fries for $1, medium for $3, and large fries for $4")
     fries = input("Would you like fries? ")
     if fries == "yes":
         fries = True
         fries_size = input("What size fries do you want? ")
         if fries_size == "small":
-            supersize = input("Would you like to supersize this?")
+            supersize = input("Would you like to supersize this? ")
             if supersize =="yes":
                 print("You have supersized this for $1.50")
                 order.append("supersized fries")
@@ -156,7 +157,7 @@ while loop == True:
              print("error")
     if part == 10: 
         print("We have small fries for $2, medium for $3, and large fries for $4")
-        fries = input("Would you like more fries? ")
+        fries = "yes"
         if fries == "yes":
             fries = True
             fries2 = input("What size fries do you want? ")
@@ -197,25 +198,28 @@ while loop == True:
         else:
             print("error")
 
-drink_size = True
+
 if part == 3:
     selected_drink = input("Do you want a drink? ")
     if selected_drink == "yes":
         print("We have 3 drink size. Small for 1.50, medium for 2.50, and large for 3.00")
         drink_size = input("What size do you want? ")
+        loop = True
         if drink_size == "small":
             print("You have chosen a small drink for 1.00")
             order.append("small drink")
             total += 1.00 
             part = 4 
             loop = True
+            selected_drink = True
             print("Your total is now " + str(total))
-        elif drink_size == "medium ":
+        elif drink_size == "medium":
             print("You have chosen a medium drink for 1.75")
             order.append("medium drink")
             total += 1.75
             part = 4
             loop = True
+            selected_drink = True
             print("Your total is now " + str(total))
         elif drink_size == "large":
             print("You have chosen a large drink for 2.25")
@@ -223,6 +227,7 @@ if part == 3:
             total += 2.25
             part = 4
             loop = True
+            selected_drink = True
             print("Your total is " + str(total))
         else:
             print("Invalid response ending order")
@@ -232,11 +237,10 @@ if part == 3:
         drink_size = "none"
         total += 0
         drink_size = False
+        selected_drink = False
         loop = False
         part = 4
-        print("Your current order is " + str(sandwich) + " sandwich," + str(fries_size) + str(drink_size) +  " drink" + " total cost is $" + str(total))
-else:
-    total += 0
+        print("Your current order is " + str(order) + " total cost is $" + str(total))
 
 while loop == True:
     if selected_drink == True:
@@ -247,10 +251,8 @@ while loop == True:
         elif drinkamount == "no":
             part = 4 
             loop = False
-        else:
-            "error"
     if part == 11:
-        if selected_drink == "yes":
+        if drinkamount == "yes":
             print("We have 3 drink size. Small for 1.50, medium for 2.50, and large for 3.00")
             drink_size2 = input("What size do you want? ")
         if drink_size2 == "small":
@@ -260,7 +262,7 @@ while loop == True:
             part = 4
             loop = True
             print("Your total is now " + str(total))
-        elif drink_size2 == "medium ":
+        elif drink_size2 == "medium":
             print("You have chosen a medium drink for 1.75")
             order.append("medium drink")
             total += 1.75
@@ -293,20 +295,19 @@ if part == 4:
             print("error") 
         else:
             total += (amount * 0.25)
+            order.append(str(amount) + " ketchup packets")
             print("Your final total is now " + str(total))
     elif ket == "no":
         print("Your total is now " + str(total))
     else:
         print("Error")
 
-if selected_sandwich + selected_fries == True: 
-        total += -1.00
-        print(total)
+if selected_sandwich + selected_fries + selected_drink == True: 
+    print("You qualify for our offer of $1 dollar off your meal")
+    total += -1.00
+    print(total)
 
-if selected_sandwich == True and selected_drink == True and selected_fries == True and ket == True:
-  print(order)
-else:
-    print(order)
+print("Your total is $" + str(total) + " Your meal is " + str(order))
 
 
 
