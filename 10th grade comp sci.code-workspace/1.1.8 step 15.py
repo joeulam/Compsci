@@ -48,6 +48,7 @@ while len(horiz_turtles) > 0:
     t.forward(n + 2)
     if t.ycor() < 10:
       t.right(180)
+      
     elif t.ycor() >390:
       t.left(180)
 
