@@ -135,16 +135,5 @@ while p == True:
         
 
 
-
-
-
-
-        
-
-
-
-
-
-
 wn = trtl.Screen()
 wn.mainloop()
