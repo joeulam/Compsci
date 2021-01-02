@@ -16,6 +16,7 @@ if answer == "yes":
   counter.penup()
   counter.goto(150,150)
   counter.pendown()
+  counter.hideturtle()
   counter_interval = 1000   #1000 represents 1 second
   timer_up = False
   colors = ["orange","red","black","blue","yellow","white"]
@@ -42,6 +43,7 @@ if answer == "yes":
     spot.shapesize(spot_size)
     change_postition()
     update_score()
+    print("clicked")
     
 
 
