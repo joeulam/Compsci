@@ -2,10 +2,19 @@
 import turtle as trtl
 import random as rand
 import leaderboard as lb
+import sys
 
 #-----game configuration-----
 # To view in trinket change the values of font_size, spot_size, and 
 # screen_size by half
+startgame = False
+e = input("are you ready to start y/n? ")
+if e == "y":
+  startgame = True
+else:  
+  sys.exit("not ready")
+  
+
 colors = ["black", "sky blue", "salmon", "orchid", "pale green"]
 font_setup = ("Arial", 20, "normal")
 spot_size = 2
@@ -103,7 +112,7 @@ def start_game():
 # manages the leaderboard for top 5 scorers
 def manage_leaderboard():
   
-  global leader_scores_list
+  global leader_scores_list 
   global leader_names_list
   global score
   global spot
