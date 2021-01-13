@@ -25,7 +25,7 @@ counter_interval = 1000
 timer_up = False
 score = 0
 
-leaderboard_file_name = 'leaderboard.py'
+leaderboard_file_name = 'leaderboard.txt'
 leader_names_list = []
 leader_scores_list = []
 player_name = input('What is your name? ')
